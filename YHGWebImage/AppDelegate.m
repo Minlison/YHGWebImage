@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import "YHGTurnViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,7 +16,18 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    UIWindow *window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window = window;
+    
+    YHGTurnViewController *turnVC = [[YHGTurnViewController alloc] init];
+    
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:turnVC];
+    
+    self.window.rootViewController = navVC;
+    
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
