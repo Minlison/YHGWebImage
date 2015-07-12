@@ -60,16 +60,12 @@
 }
 
 - (YHGDownLoader *)downloader{
-    if (_downloader == nil) {
-        _downloader = [[YHGDownLoader alloc] init];
-    }
-    return _downloader;
+    
+    return [YHGDownLoader sharedDownloader];
 }
 - (YHGCacher *)cacher{
-    if (_cacher == nil) {
-        _cacher = [[YHGCacher alloc] init];
-    }
-    return _cacher;
+    
+    return [YHGCacher sharedCacher];
 }
 
 @end

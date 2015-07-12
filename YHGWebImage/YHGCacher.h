@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 @interface YHGCacher : NSObject
-
++ (instancetype)sharedCacher;
 - (void)cacheImage:(UIImage *)image withUrl:(NSURL *)url;
 - (UIImage *)getCacheImageWithUrl:(NSURL *)url;
 - (UIImage *)getSandImageWithUrl:(NSURL *)url;

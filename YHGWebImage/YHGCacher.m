@@ -34,7 +34,14 @@
         YHGLog(@"缓存路径--->%@",path);
     }
 }
-
++ (instancetype)sharedCacher{
+    static id instance;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[self alloc] init];
+    });
+    return instance;
+}
 - (UIImage *)getCacheImageWithUrl:(NSURL *)url{
    return (UIImage *)[self.imageCache objectForKey:url];
 }

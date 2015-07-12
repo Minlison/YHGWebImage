@@ -11,7 +11,8 @@
 typedef void(^imageBlock)(UIImage *image);
 
 @interface YHGDownLoader : NSObject
-
+// 单例
++ (instancetype)sharedDownloader;
 - (void)downloaderImageWithUrl:(NSURL *)url completion:(imageBlock)completion;
 - (void)downloaderImageWithUrlString:(NSString *)urlString completion:(imageBlock)completion;
 

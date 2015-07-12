@@ -19,6 +19,15 @@
 
 @implementation YHGDownLoader
 
++ (instancetype)sharedDownloader{
+    static id instance;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        instance = [[self alloc] init];
+    });
+    return instance;
+}
+
 // 取消操作
 - (void)cancelOperationWithURL:(NSURL *)url{
     
